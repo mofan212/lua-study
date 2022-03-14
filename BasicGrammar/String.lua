@@ -1,37 +1,37 @@
--- ×Ö·û´®È«´óĞ´
+-- å­—ç¬¦ä¸²å…¨å¤§å†™
 print(string.upper("mofan"))
 
--- ×Ö·û´®È«Ğ¡Ğ´
+-- å­—ç¬¦ä¸²å…¨å°å†™
 print(string.lower("MOFAN"))
 
--- ×Ö·û´®Ìæ»»
+-- å­—ç¬¦ä¸²æ›¿æ¢
 print(string.gsub("m_o_f_a_n", "_", "", 3)) -- mofa_n 3
 print(string.gsub("m_o_f_a_n", "_", "")) -- mofan 4
 
--- ²éÕÒ×Ó´®
+-- æŸ¥æ‰¾å­ä¸²
 print(string.find("m_o_f_a_n", "m_o", 1)) -- 1 3
 print(string.find("m_o_f_a_n", "_m_o", 1)) -- nil
 print(string.find("m_o_f_a_n", "_m_o", 2)) -- nil
 
--- ·´×ª×Ö·û´®
+-- åè½¬å­—ç¬¦ä¸²
 print(string.reverse("mofan")) -- nafom
 
--- ×Ö·û´®¸ñÊ½»¯
+-- å­—ç¬¦ä¸²æ ¼å¼åŒ–
 print(string.format("the value is: %d", 212))
 
--- ÕûĞÍÊı×ÖÓë×Ö·ûµÄ×ª»»£¨ASCII£©
+-- æ•´å‹æ•°å­—ä¸å­—ç¬¦çš„è½¬æ¢ï¼ˆASCIIï¼‰
 print(string.char(97, 98, 99, 100)) -- abcd
 print(string.byte("abcd", 4)) -- 100
 print(string.byte("abcd")) -- 97
 
--- ×Ö·û´®³¤¶È
+-- å­—ç¬¦ä¸²é•¿åº¦
 print(string.len("mofan")) -- 5
 
--- ¿½±´×Ö·û´®
+-- æ‹·è´å­—ç¬¦ä¸²
 print(string.rep("mofan", 2)) -- mofanmofan
 print(string.rep("mofan", 2, ", ")) -- mofan, mofan
 
--- ×Ö·û´®µü´ú£¨ÕıÔò£©
+-- å­—ç¬¦ä¸²è¿­ä»£ï¼ˆæ­£åˆ™ï¼‰
 for word in string.gmatch("I am mofan", "%a+") do
      print(word)
      -- I
@@ -39,23 +39,23 @@ for word in string.gmatch("I am mofan", "%a+") do
      -- mofan
 end
 
--- ÕıÔò²éÕÒÒ»´Î
+-- æ­£åˆ™æŸ¥æ‰¾ä¸€æ¬¡
 print(string.match("I am 20 years old", "%d+ %a+")) -- 20 years
 print(string.format("%d, %q", string.match("I am 20 years old", "(%d+) (%a+)"))) -- 20, "years"
 print(string.match("I am 20 years old", "%d+ %a+", 15)) -- nil
 
--- ×Ö·û´®½ØÈ¡
+-- å­—ç¬¦ä¸²æˆªå–
 --[[ 
     string.sub(s, i [, j])
-    s£ºÒª½ØÈ¡µÄ×Ö·û´®¡£
-    i£º½ØÈ¡¿ªÊ¼Î»ÖÃ¡£
-    j£º½ØÈ¡½áÊøÎ»ÖÃ£¬Ä¬ÈÏÎª -1£¬×îºóÒ»¸ö×Ö·û¡£
+    sï¼šè¦æˆªå–çš„å­—ç¬¦ä¸²ã€‚
+    iï¼šæˆªå–å¼€å§‹ä½ç½®ã€‚
+    jï¼šæˆªå–ç»“æŸä½ç½®ï¼Œé»˜è®¤ä¸º -1ï¼Œæœ€åä¸€ä¸ªå­—ç¬¦ã€‚
  ]]
 print(string.sub("mofan", 1, 2)) -- mo
 print(string.sub("mofan", 5, 7)) -- n
 print(string.sub("mofan", 1, -2)) -- mofa
-print(string.sub("mofan", 6)) -- ¿Õ×Ö·û´®
-print(string.sub("mofan", 100)) -- ¿Õ×Ö·û´®
+print(string.sub("mofan", 6)) -- ç©ºå­—ç¬¦ä¸²
+print(string.sub("mofan", 100)) -- ç©ºå­—ç¬¦ä¸²
 print(string.sub("mofan", -5)) -- mofan
 print(string.sub("mofan", -100)) -- mofan
 
@@ -64,10 +64,10 @@ local string1 = "Lua"
 local string2 = "Tutorial"
 local number1 = 10
 local number2 = 20
--- »ù±¾×Ö·û´®¸ñÊ½»¯
-print(string.format("»ù±¾¸ñÊ½»¯ %s %s",string1,string2)) -- »ù±¾¸ñÊ½»¯ Lua Tutorial
--- ÈÕÆÚ¸ñÊ½»¯
+-- åŸºæœ¬å­—ç¬¦ä¸²æ ¼å¼åŒ–
+print(string.format("åŸºæœ¬æ ¼å¼åŒ– %s %s",string1,string2)) -- åŸºæœ¬æ ¼å¼åŒ– Lua Tutorial
+-- æ—¥æœŸæ ¼å¼åŒ–
 local date = 2; local month = 1; local year = 2014
-print(string.format("ÈÕÆÚ¸ñÊ½»¯ %02d/%02d/%03d", date, month, year)) -- ÈÕÆÚ¸ñÊ½»¯ 02/01/2014
--- Ê®½øÖÆ¸ñÊ½»¯
+print(string.format("æ—¥æœŸæ ¼å¼åŒ– %02d/%02d/%03d", date, month, year)) -- æ—¥æœŸæ ¼å¼åŒ– 02/01/2014
+-- åè¿›åˆ¶æ ¼å¼åŒ–
 print(string.format("%.4f",1/3)) -- 0.3333
