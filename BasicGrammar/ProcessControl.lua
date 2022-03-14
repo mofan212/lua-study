@@ -1,29 +1,29 @@
 --[[ 
-    1¡¢¿ØÖÆ½á¹¹µÄÌõ¼ş±í´ïÊ½½á¹û¿ÉÒÔÊÇÈÎºÎÖµ£¬Lua ÈÏÎª false ºÍ nil Îª¼Ù£¬true ºÍ·Ç nil ÎªÕæ
-    2¡¢×¢Òâ£ºLua ÖĞµÄÊı×Ö 0 Ò²ÊÇ true
+    1ã€æ§åˆ¶ç»“æ„çš„æ¡ä»¶è¡¨è¾¾å¼ç»“æœå¯ä»¥æ˜¯ä»»ä½•å€¼ï¼ŒLua è®¤ä¸º false å’Œ nil ä¸ºå‡ï¼Œtrue å’Œé nil ä¸ºçœŸ
+    2ã€æ³¨æ„ï¼šLua ä¸­çš„æ•°å­— 0 ä¹Ÿæ˜¯ true
  ]]
-if 0 then
-    print("0 Ò²ÊÇ true")
+ if 0 then
+    print("0 ä¹Ÿæ˜¯ true")
 end
 print("---------------- ")
 
 -- if..else
 local a = 100
 if a < 100 then
-    print("a Ğ¡ÓÚ 100")
+    print("a å°äº 100")
 else
-    print("a ²»Ğ¡ÓÚ 100")
+    print("a ä¸å°äº 100")
 end
 print("---------------- ")
 
 -- if..elseif..else
 local b = 100
 if b > 1000 then
-    print("b ´óÓÚ 1000")
+    print("b å¤§äº 1000")
 elseif b > 100 then
-    print("b ´óÓÚ 100")
+    print("b å¤§äº 100")
 else
-    print("b ´óÓÚ 10")
+    print("b å¤§äº 10")
 end
 
--- Óë Java Ò»Ñù£¬Lua Ò²Ö§³Ö if Ç¶Ì×Óï¾ä
+-- ä¸ Java ä¸€æ ·ï¼ŒLua ä¹Ÿæ”¯æŒ if åµŒå¥—è¯­å¥
