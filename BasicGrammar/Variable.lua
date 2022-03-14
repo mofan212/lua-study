@@ -5,23 +5,26 @@
     4、局部变量的作用域为从声明位置开始到所在语句块结束
     5、变量的默认值均为 nil
  ]]
-a = 5
-local b = 5
-local function joke()
-    c = 5
-    local d = 6
-end
-
-joke()
-print(c, d) -- 5 nil
-
-do
-    local a = 6
-    b = 6
-    print(a, b) -- 6 6
-end
-
-print(a, b) -- 5 6
+ a = 5
+ local b = 5
+ 
+ local function joke()
+     C = 5
+     local d = 6
+ end
+ 
+ print(C, d) -- nil nil
+ 
+ joke()
+ print(C, d) -- 5 nil
+ 
+ do
+     local a = 6
+     b = 6
+     print(a, b) -- 6 6
+ end
+ 
+ print(a, b) -- 5 6
 print("---------------- ")
 
 -- 赋值

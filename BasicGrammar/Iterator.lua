@@ -59,7 +59,7 @@ print("---------------- ")
 -- 多状态的迭代器
 -- 很多情况下，迭代器需要保存多个状态信息而不是简单的状态常量和控制变量，最简单的方法是使用闭包。
 
-array = {"Google", "Runoob"}
+array = {"one", "two"}
 
 local function elementIterator (collection)
    local index = 0

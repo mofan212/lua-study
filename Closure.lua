@@ -279,3 +279,41 @@ for index, value in ipairs(list17) do
     print(value()) -- 1 2 3 4 5
 end
 print("---------------- ")
+
+-- 场景十八
+V18 = {}
+do
+    local var18 = 2
+    V18.fun18 = function ()
+        var18 = var18 - 1
+        print(var18)
+    end
+end
+V18.fun18();
+V18.fun18();
+print("---------------- ")
+
+-- 词法定界
+local function fn1()
+    local a = 5
+    local function fn2()
+        print(a)
+    end
+    fn2()
+end
+
+fn1()
+
+print("---------------- ")
+
+
+local function fn3()
+    print("hello world")
+end
+
+local fn4 = function () -- 函数作为变量
+    print("hello world")
+end
+
+fn3()
+fn4()
