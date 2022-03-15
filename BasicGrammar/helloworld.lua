@@ -2,6 +2,8 @@
 
 print("hello world")
 
+print "hello world"
+
 --[[
     多行注释
 ]]
