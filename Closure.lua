@@ -280,7 +280,9 @@ for index, value in ipairs(list17) do
 end
 print("---------------- ")
 
--- 场景十八
+-- 场景十八 (不是闭包)
+print(var18) -- nil
+
 V18 = {}
 do
     local var18 = 2
