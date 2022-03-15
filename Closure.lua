@@ -295,6 +295,20 @@ V18.fun18();
 V18.fun18();
 print("---------------- ")
 
+local function fun19()
+    local var19 = 3
+    local tab19 = {
+        ["A"] = function ()
+            var19 = var19 - 1
+            print("var19 = ", var19)
+        end
+    }
+    return tab19
+end
+fun19().A() -- var19 = 2
+
+print("---------------- ")
+
 -- 词法定界
 local function fn1()
     local a = 5
