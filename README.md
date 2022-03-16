@@ -17,3 +17,8 @@ Lua 学习
 闭包这一概念最初是在 JavaScript 中听到的，但身为后端开发的我并没有对此进行深入了解，也仅仅是听过这个名词罢了。
 
 最近在看 Lua 时发现 Lua 在实现多状态迭代器时使用了闭包，因此也打算对此深入了解一下。
+
+# 其他使用笔记
+
+- [Lua中 'local xxx do ... end' 到底表达了什么](https://blog.csdn.net/albertsh/article/details/77600112)
+- [Lua do-end](https://blog.csdn.net/fightsyj/article/details/111289397)
