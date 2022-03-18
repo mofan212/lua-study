@@ -1,24 +1,18 @@
-# Lua
+# Lua 学习
 
-Lua 学习
-
-参考链接：[Lua 教程](https://www.runoob.com/lua/lua-tutorial.html)
+- [Lua 教程](https://www.runoob.com/lua/lua-tutorial.html)
 
 # Lua 闭包
 
-## 0. 前言
+- [闭包，看这一篇就够了——带你看透闭包的本质，百发百中](https://blog.csdn.net/weixin_43586120/article/details/89456183) 
 
-参考链接：
+- [Lua的闭包详解（终于搞懂了）](https://www.cnblogs.com/zzy-frisrtblog/p/5864209.html)
 
-[闭包，看这一篇就够了——带你看透闭包的本质，百发百中](https://blog.csdn.net/weixin_43586120/article/details/89456183) 
+- [深入理解闭包系列第一篇——到底什么才是闭包](https://www.cnblogs.com/xiaohuochai/p/5728577.html)
 
-[Lua的闭包详解（终于搞懂了）](https://www.cnblogs.com/zzy-frisrtblog/p/5864209.html)
+- [什么是闭包](https://www.zhihu.com/question/34210214)
 
-闭包这一概念最初是在 JavaScript 中听到的，但身为后端开发的我并没有对此进行深入了解，也仅仅是听过这个名词罢了。
-
-最近在看 Lua 时发现 Lua 在实现多状态迭代器时使用了闭包，因此也打算对此深入了解一下。
-
-# 其他使用笔记
+# 其他
 
 - [Lua中 'local xxx do ... end' 到底表达了什么](https://blog.csdn.net/albertsh/article/details/77600112)
 - [Lua do-end](https://blog.csdn.net/fightsyj/article/details/111289397)
