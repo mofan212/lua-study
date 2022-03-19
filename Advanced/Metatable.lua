@@ -130,3 +130,91 @@ print("newIndexTab 赋值前 name 的值 ", newIndexTab.name) -- new index tab n
 man.name = "mofan"
 print("newIndexTab 赋值后 name 的值 ", newIndexTab.name) -- mofan
 print("man 中 name 的值 ", man.name) -- nil
+
+print("---------------- ")
+
+-- 两表相加
+local function table_maxn(t) -- 获取表中最大的键值
+    local mn = 0
+    for key, value in pairs(t) do
+        if mn < key then
+            mn = key
+        end
+    end
+    return mn
+end
+
+mytable = setmetatable({1, 2, 3}, {
+    __add = function (mytable, newtable) -- 使用 __add 元方法，重载 `+` 运算符
+        for i = 1, table_maxn(newtable) do
+            table.insert(mytable, table_maxn(mytable) + 1, newtable[i])
+        end
+        return mytable
+    end
+})
+
+local secondtable = {4, 5, 6}
+
+mytable = mytable + secondtable
+
+for index, value in ipairs(mytable) do
+    print(index, value)
+end
+
+print("---------------- ")
+
+-- `__call` 元方法。当 table 名字作为函数名字的形式被调用时，会调用 `__call` 元方法。
+mytable = setmetatable({10}, {
+    __call = function (mytable, newtable)
+        local sum = 0
+        for i = 1, table_maxn(mytable) do
+            sum = sum + mytable[i]
+        end
+
+        if type(newtable) == "table" then
+            for i = 1, table_maxn(newtable) do
+                sum = sum + newIndexTab[i]
+            end
+        elseif type(newtable) == "number" then
+            sum = sum + newtable
+        end
+
+        return sum -- 将两个表的值加在一起
+    end
+})
+
+newIndexTab = {10, 20, 30}
+print(mytable(newIndexTab))
+print(mytable(10)) -- 20
+print("---------------- ")
+
+-- __tostring (和 Java 类似)
+mytable = setmetatable({10, 20, 30}, {
+    __tostring = function (tab)
+        local str = {}
+        for index, value in ipairs(tab) do
+            table.insert(str, string.format("%s -> %s", index, value))
+        end
+        return table.concat(str, "\n") -- 必须返回字符串，否则报错
+    end
+})
+
+print(mytable)
+print("---------------- ")
+
+-- 构造只读 table
+local function unmodifiable(t)
+    local proxy = {}
+    local mt = {
+        __index = t, 
+        __newindex = function (t, k, v)
+            error "you can't modify this table"
+        end
+    }
+    setmetatable(proxy, mt)
+    return proxy
+end
+
+mytable = unmodifiable({"One", "Two", "Three"})
+print(mytable[2])
+mytable[4] = "Four" -- 报错
