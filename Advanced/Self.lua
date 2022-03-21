@@ -1,33 +1,32 @@
 Rectangle = {area = 0, length = 0, breadth = 0}
 
-function Rectangle:new (o,length,breadth)
+function Rectangle:new (o, length, breadth)
   o = o or {}
   setmetatable(o, self)
   self.__index = self
   self.length = length or 0
   self.breadth = breadth or 0
-  self.area = length*breadth;
+  self.area = length * breadth;
   return o
 end
 
 function Rectangle:printArea ()
-  print("矩形面积为 ",self.area)
+  print("矩形面积为 ", self.area)
 end
--- 创建
 
+-- 创建
 local r = Rectangle:new(nil, 2, 3);
 local p = Rectangle:new(nil, 4, 5);
 
 -- 输出
-
 r:printArea(); -- 20
 p:printArea(); -- 20
 
 
-local Rect = {area = 0,length = 0,windth = 0}
-function Rect:new(length,windth)
+local Rect = {area = 0, length = 0, windth = 0}
+function Rect:new(length, windth)
   local t = {}
-  setmetatable(t,self)
+  setmetatable(t, self)
   self.__index = self
   t.length = length
   t.windth = windth
