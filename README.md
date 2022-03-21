@@ -8,6 +8,8 @@
 
 - [Lua 学习之基础篇六<Lua IO 库>](https://www.cnblogs.com/xiaoqiangink/p/12082849.html)
 
+- [Lua 教程 - 基础语法](https://wiki.luatos.com/luaGuide/introduction.html)
+
 # Lua 闭包
 
 - [闭包，看这一篇就够了——带你看透闭包的本质，百发百中](https://blog.csdn.net/weixin_43586120/article/details/89456183) 
