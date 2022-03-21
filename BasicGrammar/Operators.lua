@@ -46,6 +46,15 @@ print(tab2.k1) -- v1
 print("tab2 size is " .. #tab2) -- 0
 print("---------------- ")
 
+local num = 123
+-- 将数字转字符串后拼接。如果不转，会报错。
+print(str .. tostring(num))
+
+-- 拓展：字符串转数字
+local numStr = "456"
+print("字符串转数字 ", (tonumber(numStr) + num))
+print("字符串转数字 ", (num + numStr))
+
 --[[ 
     运算符优先级：
     ^
