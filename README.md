@@ -4,7 +4,7 @@
 
 - [Lua 5.3 参考手册](https://www.runoob.com/manual/lua53doc/manual.html#2.6)
 
-- [https://blog.csdn.net/qq_37326058/article/details/85721176](https://blog.csdn.net/qq_37326058/article/details/85721176)
+- [windows下安装lua环境](https://blog.csdn.net/qq_37326058/article/details/85721176)
 
 - [Lua 学习之基础篇六<Lua IO 库>](https://www.cnblogs.com/xiaoqiangink/p/12082849.html)
 
@@ -20,9 +20,10 @@
 
 - [什么是闭包](https://www.zhihu.com/question/34210214)
 
-# 其他
+# do...end
 
 - [Lua中 'local xxx do ... end' 到底表达了什么](https://blog.csdn.net/albertsh/article/details/77600112)
+
 - [Lua do-end](https://blog.csdn.net/fightsyj/article/details/111289397)
 
 # 乱码
