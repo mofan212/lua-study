@@ -5,26 +5,26 @@
     4、局部变量的作用域为从声明位置开始到所在语句块结束
     5、变量的默认值均为 nil
  ]]
- a = 5
- local b = 5
- 
- local function joke()
-     C = 5
-     local d = 6
- end
- 
- print(C, d) -- nil nil
- 
- joke()
- print(C, d) -- 5 nil
- 
- do
-     local a = 6
-     b = 6
-     print(a, b) -- 6 6
- end
- 
- print(a, b) -- 5 6
+a = 5
+local b = 5
+
+local function joke()
+    C = 5
+    local d = 6
+end
+
+print(C, d) -- nil nil
+
+joke()
+print(C, d) -- 5 nil
+
+do
+    local a = 6
+    b = 6
+    print(a, b) -- 6 6
+end
+
+print(a, b) -- 5 6
 print("---------------- ")
 
 -- 赋值
@@ -46,7 +46,7 @@ a, b, c = 0
 print(a, b, c) -- 0 nil nil
 print("---------------- ")
 --[[ 
-    1、多值赋值经常用来交换变量，或将函数调用返回给变量，比如： 
+    1、多值赋值经常用来交换变量，或将函数调用返回给变量，比如：
             a, b = f()
         f()返回两个值，第一个赋给 a，第二个赋给 b
     2、尽可能的使用局部变量。这样可以避免命名冲突，同时访问局部变量的速度比全局变量更快
