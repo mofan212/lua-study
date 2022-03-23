@@ -44,15 +44,22 @@ print("table size is " .. #tab) -- 2
 local tab2 = {k1 = "v1", k2 = "v2"}
 print(tab2.k1) -- v1
 print("tab2 size is " .. #tab2) -- 0
+-- 针对字符串而言，# 输出的值是字符串所占的字节数
+print(#"Hello World") -- 11
+print(#"你好世界") -- 12
+print(#"默烦") -- 6
 print("---------------- ")
 
 local num = 123
--- 将数字转字符串后拼接。如果不转，会报错。
-print(str .. tostring(num))
+-- 使用 .. 连接数字和字符串时，数字会自动转换为字符串
+print(str .. num)
+-- 在一个数字字面量后使用 .. 时，必须加上空格以防止被解释错
+print(10 .. 20) -- 1020
 
 -- 拓展：字符串转数字
 local numStr = "456"
 print("字符串转数字 ", (tonumber(numStr) + num))
+-- 当字符串和数字使用算术操作符连接时，字符串会被转成数字（当然这个字符串必须能转换成数字，否则报错）。
 print("字符串转数字 ", (num + numStr))
 
 --[[ 
