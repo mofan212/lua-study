@@ -16,7 +16,7 @@ ma.funC()
 
 
 local mb = require "Module.ModuleB" -- 导入就会执行一次
-local mbb = require "Module.ModuleB" -- 同一文件导入多次，就执行一次
+local mbb = require "Module.ModuleB" -- 同一文件导入多次，也只执行一次
 
 -- 使用 dofile 每次导入都会执行
 local mc = dofile "Module/ModuleC.lua"

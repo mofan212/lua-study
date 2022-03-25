@@ -5,12 +5,12 @@
     4、Lua 也是通过 table 来解决模块（module）、包（package）和对象（Object）的。 例如 string.format 表示使用 "format" 来索引 table string。
  ]]
 
- -- 构建一个表
- local mytable = {}
+-- 构建一个表
+local mytable = {}
 
- mytable[1] = "One"
+mytable[1] = "One"
 
- mytable = nil -- 删除引用。Lua 的垃圾回收机制会释放内存
+mytable = nil -- 删除引用。Lua 的垃圾回收机制会释放内存
 
  --[[ 
      当我们为 table a 并设置元素，然后将 a 赋值给 b，则 a 与 b 都指向同一个内存。
@@ -19,30 +19,30 @@
   ]]
 
 mytable = {}
-print("mytable 的类型是 " .. type(mytable))
+print("mytable 的类型是 " .. type(mytable)) -- table
 
 mytable[1] = "One"
 mytable["mofan"] = "修改前"
-print("索引为 1 的元素是 " .. mytable[1])
-print("索引为 mofan 的元素是 " .. mytable["mofan"])
+print("索引为 1 的元素是 " .. mytable[1]) -- One
+print("索引为 mofan 的元素是 " .. mytable["mofan"]) -- 修改前
 
 -- anotherTable 和 mytable 指向同一个 table
 local anotherTable = mytable
-print("anotherTable 中索引为 1 的元素是 " .. anotherTable[1])
-print("anotherTable 中索引为 mofan 的元素是 " .. anotherTable["mofan"])
+print("anotherTable 中索引为 1 的元素是 " .. anotherTable[1]) -- One
+print("anotherTable 中索引为 mofan 的元素是 " .. anotherTable["mofan"]) -- 修改前
 
 anotherTable["mofan"] = "修改后"
-print("anotherTable 中索引为 mofan 的元素是 " .. anotherTable["mofan"])
+print("anotherTable 中索引为 mofan 的元素是 " .. anotherTable["mofan"]) -- 修改后
 
 -- 释放变量
 anotherTable = nil
-print("anotherTable 是 ", anotherTable) -- 使用 .. 连接将报错，因为 .. 是用来连接两个字符串的
+print("anotherTable 是 ", anotherTable) -- nil。使用 .. 连接将报错，因为 .. 是用来连接两个字符串的
 
 -- mytable 不受影响
-print("mytable 索引为 mofan 的元素是 " .. mytable["mofan"])
+print("mytable 索引为 mofan 的元素是 " .. mytable["mofan"]) -- 修改后
 
 mytable = nil
-print("mytable 是 ", mytable)
+print("mytable 是 ", mytable) -- nil
 print("---------------- ")
 
 
@@ -50,24 +50,24 @@ print("---------------- ")
 
 -- Table 连接
 local numberTable = {"One", "Two", "Three"}
-print("连接 table 中所有元素 ", table.concat(numberTable))
-print("使用指定连接符进行连接 ", table.concat(numberTable, ","))
-print("对指定位置的元素进行连接", table.concat(numberTable, ",", 2, 3))
+print("连接 table 中所有元素 ", table.concat(numberTable)) -- OneTwoThree
+print("使用指定连接符进行连接 ", table.concat(numberTable, ",")) -- One,Two,Three
+print("对指定位置的元素进行连接", table.concat(numberTable, ",", 2, 3)) -- Two,Three
 print("---------------- ")
 
 -- 插入和移除
 numberTable = {"1", "2", "3"}
 table.insert(numberTable, "4") -- 在末尾插入
-print("索引为 4 的元素是 ", numberTable[4])
+print("索引为 4 的元素是 ", numberTable[4]) -- 4
 
 table.insert(numberTable, 2, "Two") -- 在索引为 2 的位置插入元素
-print("索引为 1 的元素是 ", numberTable[1])
-print("索引为 2 的元素是 ", numberTable[2])
-print("索引为 3 的元素是 ", numberTable[3])
+print("索引为 1 的元素是 ", numberTable[1]) -- 1
+print("索引为 2 的元素是 ", numberTable[2]) -- Two
+print("索引为 3 的元素是 ", numberTable[3]) -- 2
 
-print("索引为 5 的元素是 ", numberTable[5])
+print("索引为 5 的元素是 ", numberTable[5]) -- 4
 table.remove(numberTable, 5)
-print("索引为 5 的元素是 ", numberTable[5])
+print("索引为 5 的元素是 ", numberTable[5]) -- nil
 print("---------------- ")
 
 -- 排序
@@ -105,8 +105,8 @@ local function getMaxInTable(t)
 end
 
 local testTab = {[1] = 1, [2] = 2, [3] = 3, [4] = 6}
-print("testTab 中的最大值是 ", getMaxInTable(testTab))
-print("testTab 的长度为 ", #testTab )
+print("testTab 中的最大值是 ", getMaxInTable(testTab)) -- 6
+print("testTab 的长度为 ", #testTab ) -- 4
 print("---------------- ")
 
 -- 获取 table 的长度
