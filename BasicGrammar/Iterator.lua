@@ -81,7 +81,7 @@ do
 end
 print("---------------- ")
 
--- 泛型 for 在迭代的时候每次调用的是闭包函数，迭代函数只是开始的时候调用一次
+-- 在多状态的迭代器中，迭代的时候每次调用的是闭包函数，迭代函数只是开始的时候调用一次
 local function eleiter(t)
     local index = 0
     print('in eleiter function')  --> 每次调用迭代函数都说一句：in eleiter function
