@@ -26,12 +26,12 @@ function Shape:new (o,side)
 end
 -- 基础类方法 printArea
 function Shape:printArea ()
-  print("面积为 ",self.area) -- 100
+  print("面积为 ", self.area)
 end
 
 -- 创建对象
 local myshape = Shape:new(nil,10)
-myshape:printArea()
+myshape:printArea() -- 100
 
 Square = Shape:new()
 
@@ -45,12 +45,12 @@ end
 
 -- 派生类方法 printArea（重写基础类的函数）
 function Square:printArea ()
-  print("正方形面积为 ",self.area) -- 100
+  print("正方形面积为 ", self.area)
 end
 
 -- 创建对象
 local mysquare = Square:new(nil,10)
-mysquare:printArea()
+mysquare:printArea() -- 100
 
 Rectangle = Shape:new()
 -- 派生类方法 new
@@ -64,12 +64,12 @@ end
 
 -- 派生类方法 printArea
 function Rectangle:printArea ()
-  print("矩形面积为 ",self.area) -- 200
+  print("矩形面积为 ", self.area)
 end
 
 -- 创建对象
 local myrectangle = Rectangle:new(nil,10,20)
-myrectangle:printArea()
+myrectangle:printArea() -- 200
 print("---------------- ")
 
 --[[ 

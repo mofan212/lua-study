@@ -184,7 +184,7 @@ mytable = setmetatable({10}, {
 })
 
 newIndexTab = {10, 20, 30}
-print(mytable(newIndexTab))
+print(mytable(newIndexTab)) -- 70
 print(mytable(10)) -- 20
 print("---------------- ")
 

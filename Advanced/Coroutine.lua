@@ -119,20 +119,20 @@ print("---------------- ")
 
 -- yield 的返回值
 local cor = coroutine.create(function(a)
-    print("参数 a 值为 ", a);
-    local b, c = coroutine.yield(a + 3); --这里表示挂起协程，并且将a+1的值进行返回，并且指定下一次唤醒需要 b,c 两个参数。
+    print("参数 a 值为 ", a); -- 1
+    local b, c = coroutine.yield(a + 3); -- 2 3。这里表示挂起协程，并且将a+1的值进行返回，并且指定下一次唤醒需要 b,c 两个参数。
     print("参数 b,c值分别为 ", b, c); -- b c 的值为当次 resume 唤醒协程时指定的值，即 2 3
     return b * c; --协程结束，并且返回 b*c 的值。
 end);
 
-print("第一次调用：", coroutine.resume(cor, 1));
-print("第二次调用：", coroutine.resume(cor, 2, 3));
-print("第三次调用：", coroutine.resume(cor));
+print("第一次调用：", coroutine.resume(cor, 1)); -- true 4
+print("第二次调用：", coroutine.resume(cor, 2, 3)); -- true 6
+print("第三次调用：", coroutine.resume(cor)); -- false cannot resume dead coroutine
 
 
 --[[ 
     总结:
-    1、coroutine.creat 方法只要建立了一个协程 ，那么这个协程的状态默认就是 suspend。使用 resume 方法启动后，会变成 running 状态；遇到 yield 时将状态设为 suspend；如果遇到 return，那么将协程的状态改为 dead。
+    1、coroutine.creat 方法只要建立了一个协程 ，这个协程的状态默认就是 suspend。使用 resume 方法启动后，会变成 running 状态；遇到 yield 时将状态设为 suspend；如果遇到 return，那么将协程的状态改为 dead。
     2、coroutine.resume 方法需要特别注意的一点是，这个方法只要调用就会返回一个 boolean 值。
     3、coroutine.resume 方法如果调用成功，那么返回 true；如果有 yield 方法，同时返回 yield 括号里的参数；如果没有 yield，那么继续运行直到协程结束；直到遇到 return，将协程的状态改为 dead，并同时返回 return 的值。
     4、coroutine.resume 方法如果调用失败(调用状态为 dead 的协程会导致失败)，那么返回 false，并且带上一句"cannot resume dead coroutine"

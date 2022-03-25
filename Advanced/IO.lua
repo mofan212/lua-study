@@ -74,7 +74,7 @@ file = io.open("Advanced/testfile/test.txt", "a")
 file:setvbuf("full", 16)
 file:write("10 letters\n")
 file:write("10 letters\n")
-file:flush() -- 注释前后，效果不一样
+file:flush() -- 注释前后，控制台效果不一样
 -- 暂停程序，模拟出错
 os.execute("pause")
 file:close()
