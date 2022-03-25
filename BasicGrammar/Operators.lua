@@ -52,15 +52,15 @@ print("---------------- ")
 
 local num = 123
 -- 使用 .. 连接数字和字符串时，数字会自动转换为字符串
-print(str .. num)
+print(str .. num) -- hello world123
 -- 在一个数字字面量后使用 .. 时，必须加上空格以防止被解释错
 print(10 .. 20) -- 1020
 
 -- 拓展：字符串转数字
 local numStr = "456"
-print("字符串转数字 ", (tonumber(numStr) + num))
+print("字符串转数字 ", (tonumber(numStr) + num)) -- 579
 -- 当字符串和数字使用算术操作符连接时，字符串会被转成数字（当然这个字符串必须能转换成数字，否则报错）。
-print("字符串转数字 ", (num + numStr))
+print("字符串转数字 ", (num + numStr)) -- 579
 
 --[[ 
     运算符优先级：
@@ -82,7 +82,7 @@ print("字符串转数字 ", (num + numStr))
 
 -- 实现三元运算符
 local flag = true
-print(flag and "mofan" or "默烦")
+print(flag and "mofan" or "默烦") -- mofan
 print("---------------- ")
 
 -- 使用 # 计算获取表的长度
