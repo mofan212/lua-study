@@ -2,7 +2,9 @@
     1、控制结构的条件表达式结果可以是任何值，Lua 认为 false 和 nil 为假，true 和非 nil 为真
     2、注意：Lua 中的数字 0 也是 true
  ]]
- if 0 then
+
+-- if 
+if 0 then
     print("0 也是 true")
 end
 print("---------------- ")

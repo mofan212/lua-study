@@ -70,4 +70,4 @@ print(string.format("基本格式化 %s %s",string1,string2)) -- 基本格式化
 local date = 2; local month = 1; local year = 2014
 print(string.format("日期格式化 %02d/%02d/%03d", date, month, year)) -- 日期格式化 02/01/2014
 -- 十进制格式化
-print(string.format("%.4f",1/3)) -- 0.3333
+print(string.format("%.4f", 1 / 3)) -- 0.3333
