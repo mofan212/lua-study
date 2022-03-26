@@ -26,11 +26,11 @@ else
 end
 
 local status, errorInfo = pcall(errorFun, 3, 1)
-print(status)
+print(status) -- false
 print(errorInfo) -- 存在错误返回错误信息
 local sum
 status, sum = pcall(add, 3, 4)
-print(status)
+print(status) -- true
 print(sum) -- 没有错误返回正确结果 7
 
 --[[ 
@@ -42,4 +42,4 @@ local function myerrorhandler(err)
 end
 
 status = xpcall(errorFun, myerrorhandler, 3, 1)
-print(status)
+print(status) -- false
